@@ -30,7 +30,7 @@ jobs:
       - name: Copy dist contents to temp folder
         run: |
           mkdir temp-deploy
-          cp -R weather/dist/* temp-deploy/
+          cp -r weather/dist/. temp-deploy/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

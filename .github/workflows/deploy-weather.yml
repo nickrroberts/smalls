@@ -17,14 +17,6 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        working-directory: ./weather
-        run: npm install
-
-      - name: Build weather app
-        working-directory: ./weather
-        run: npm run build
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

@@ -27,11 +27,15 @@ jobs:
         working-directory: ./weather
         run: npm run build
 
+      - name: Copy dist contents to temp folder
+        run: |
+          mkdir temp-deploy
+          cp -R weather/dist/* temp-deploy/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./weather/dist
+          publish_dir: ./temp-deploy
           destination_dir: weather
-          force_orphan: true

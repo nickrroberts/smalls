@@ -11,7 +11,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0gh
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: ./weather
+        run: npm ci
+
+      - name: Build weather app
+        working-directory: ./weather
+        run: npm run build
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -20,4 +33,9 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./weather/dist
           destination_dir: weather
-          keep_files: 0      
+          keep_files: 0 
+
+      - name: Dump workspace
+        run: |
+          pwd
+          ls -R .    

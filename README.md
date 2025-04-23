@@ -19,5 +19,5 @@ Rock Paper Scissors in the browser.
 ### [sketch](https://nickrroberts.github.io/smalls/sketch/)
 A simple way to draw pixel art on a grid. You can also specify how fine-grained the canvas should be.
 
-### [weather](https://nickrroberts.github.io/smalls/weather/)
+### weather
 Ah, the obligatory weather app that hits an API and displays stuff in the DOM. Good chance to mess around with async and await. Built a little favoriting system for locations with localStorage as well!

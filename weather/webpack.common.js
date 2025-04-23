@@ -5,7 +5,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/smalls/weather/'
+    publicPath: '/smalls/weather/dist/'
   },
   module: {
     rules: [

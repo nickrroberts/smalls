@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --config webpack.dev.js --mode development",
+    "start": "webpack serve --config webpack.dev.js --mode production",
     "build": "webpack --config webpack.prod.js --mode production",
     "deploy": "git subtree push --prefix dist origin gh-pages",
     "lint": "eslint 'src/**/*.{js,jsx}'",

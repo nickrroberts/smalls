@@ -9,7 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -22,10 +23,10 @@ jobs:
         working-directory: ./weather
         run: npm ci
 
-      - name: Build weather app
+      - name: Build project
         working-directory: ./weather
         run: npm run build
-        
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -33,9 +34,4 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./weather/dist
           destination_dir: weather
-          keep_files: 0 
-
-      - name: Dump workspace
-        run: |
-          pwd
-          ls -R .    
+          force_orphan: true

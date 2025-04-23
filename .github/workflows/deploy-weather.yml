@@ -9,12 +9,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0     # make sure we have full history
+        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./weather/dist
           destination_dir: weather
+          clean: true        # ← this will delete all other files

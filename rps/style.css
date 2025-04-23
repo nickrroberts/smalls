@@ -1,0 +1,120 @@
+ /* Import a fun Google Font */
+ @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+ /* General Page Styling */
+ html, body {
+     height: 100%;
+     margin: 0;
+     font-family: 'Press Start 2P', cursive;
+     text-align: center;
+     background-color: #41ff3b;
+     color: #333;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ input, .submit {
+     font-family: 'Press Start 2P', cursive;
+ }
+ .container {
+     width: 50%;
+ }
+ h1 {
+     font-size: 28px;
+     color: #ff5722;
+     text-shadow: 2px 2px #ff9800;
+ }
+ p {
+     font-size: 16px;
+     color: #222;
+ }
+ /* Add Fun Icons for Rock, Paper, Scissors */
+ .icons {
+     font-size: 50px;
+     margin: 20px 20px 50px 20px;
+     display: flex;
+     justify-content: center;
+     gap: 20px;
+ }
+ .icon {
+     cursor: pointer;
+     transition: transform 0.3s ease-in-out;
+ }
+ .icon:hover {
+     transform: scale(1.2) rotate(10deg);
+ }
+ /* Play Button Styling */
+ input, .submit {
+     font-size: 20px;
+     padding: 15px 30px;
+     border: none;
+     border-radius: 10px;
+     cursor: pointer;
+     transition: 0.3s;
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+ }
+ input {
+     width: 100%;
+     box-sizing: border-box;
+     margin-bottom: 20px;
+ }
+ .submit {
+     background-color: #ff5722;
+     color: white;
+ }
+ .submit:hover {
+     background-color: #ff9800;
+     transform: scale(1.1);
+ }
+ .submit:active {
+     transform: scale(0.95);
+ }
+ /* Modal Background */
+ .modal {
+     display: none; /* Hidden by default */
+     position: fixed;
+     z-index: 1;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     justify-content: center;
+     align-items: center;
+ }
+ /* Modal Content */
+ .modal-content {
+     background-color: white;
+     padding: 20px;
+     border-radius: 10px;
+     text-align: center;
+     width: 300px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ }
+ /* Close Button */
+ .close {
+     position: absolute;
+     top: 10px;
+     right: 20px;
+     font-size: 24px;
+     cursor: pointer;
+ }
+ /* Responsive for Small Screens */
+ @media (max-width: 600px) {
+     body {
+         padding: 10px;
+     }
+     h1 {
+         font-size: 20px;
+     }
+     .icons {
+         font-size: 40px;
+     }
+     input, .submit {
+         font-size: 18px;
+         padding: 10px 20px;
+     }
+
+     .container {
+         width: 100%
+     }
+ }

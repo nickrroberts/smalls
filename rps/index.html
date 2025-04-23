@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors 🎮</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors ✊✋✌️</h1>
+        <p>Pit yourself against your browser in a best-of-five matchup! Enter a value below to</p>
+        <div class="icons">
+            <span class="icon">✊</span>
+            <span class="icon">✋</span>
+            <span class="icon">✌️</span>
+        </div>
+        <p>Type 'Rock', 'Paper', or 'Scissors'</p>
+        <input id="entry">
+        <button class="submit">🚀 Submit move</button>
+        <h2>Score</h2>
+        <h3 id="human-score">Human: 0</h3>
+        <h3 id="computer-score">Computer: 0</h3>
+        <h1 id="message"></h1>
+    </div>
+    <!-- Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Game Result</h2>
+            <p id="modal-message">You won this round! 🎉</p>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

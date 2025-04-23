@@ -1,0 +1,202 @@
+* {
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+body > * {
+    flex: 1;
+}
+
+nav, .hero, footer {
+    background-color: #1F2937;
+    color: #fff;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 900;
+    color: #F9FAF8;
+}
+
+p, button {
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* Nav */
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.logo {
+    font-size: 24px;
+}
+
+.logo, .nav-links {
+    padding: 25px 0px;
+}
+
+/* Containers & general layout */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cards-section, .quote-section, footer  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.hero .container > * {
+    flex: 1 1 400px;
+}
+
+/* Hero section */
+
+.hero img {
+    width: 100%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.hero button, .cta, .cta button {
+    background-color: #3882F6;
+    color: #fff;
+}
+
+.hero button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+.hero-text p {
+    color: #c1c1c1;
+}
+
+/* Cards */
+
+.info-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 50px auto;
+    padding: 0 100px;
+
+}
+
+.info-item {
+    flex: 1 1 150px;
+    text-align: center;
+}
+
+.info-item img {
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;  /* Ensures square aspect ratio */
+    object-fit: cover;
+    
+}
+
+.cards-section{
+    text-align: center;
+}
+/* Quote section */
+
+.quote-section{
+    flex: 1;
+}
+
+.quote-section {
+    background-color: #E5E7EB;
+    font-size: 36px;
+    font-style: italic; 
+    color: #1F2937;
+    font-weight: 300;
+}
+
+blockquote {
+    padding: clamp(20px, 5vw, 100px);
+}
+
+.source {
+    font-weight: 700;
+    font-size: 24px;
+    text-align: right;
+    display: block;
+}
+
+/* CTA section */
+
+.cta-section {
+    width: 100%;
+}
+
+.cta {
+    border-radius: 5px;
+    padding: 50px 100px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.cta button {
+    flex-grow: 0;
+    align-self: center;
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.cta p {
+    margin: 5px 0;
+    line-height: 1.2;
+}
+
+/* Footer */
+
+footer {
+    flex-shrink: 0;
+    max-height: 150px;    
+}
+
+footer p {
+    padding: 25px;
+    font-size: 14px;
+}

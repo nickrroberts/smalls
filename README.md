@@ -1,4 +1,3 @@
-# Smalls
 Little projects for learning/fun. Here's an index with demo links:
 
 ### [3t](https://nickrroberts.github.io/smalls/3t/)

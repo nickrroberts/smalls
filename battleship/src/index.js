@@ -125,7 +125,7 @@ function handlePlacement(event) {
         bigMessage("Battle time");
         const placed = document.querySelectorAll('.ship-img');
         placed.forEach( div => div.classList.remove('placed'));
-        gamePhase = 'playerTurn';
+        setGamePhase('playerTurn');
     }
 }
 
@@ -138,9 +138,11 @@ function rotate() {
     selectedOrientation = selectedOrientation === 'horiz' ? 'vert' : 'horiz';
 }
 
+
 humanBoard.addEventListener('mouseover', handleHover);
 humanBoard.addEventListener('mouseout', clearHover);
 humanBoard.addEventListener('click', handlePlacement);
+
 document.addEventListener('click', (e) => {
     
     const clickedInsideShip = e.target.closest('.ship-img');
@@ -153,6 +155,21 @@ document.addEventListener('click', (e) => {
     });
   });
 
+function setGamePhase(newPhase) {
+    gamePhase = newPhase;
+    if (gamePhase === "playerTurn") {
+        playerTurn();
+    }
+    if (gamePhase === "computerTurn") {
+        //disable board for clicking
+        //have computer go
+        computerTurn();
+    }
+    if (gamePhase === "gameOver") {
+        bigMessage("Game over!")
+    }
+}
+
 
 //Main phase
     //Create turns between human and computer
@@ -160,5 +177,30 @@ document.addEventListener('click', (e) => {
     //Inform the user of a miss and a hit (both for user and computer)
     //Display missed shots and hits on the enemy board
     //Check for win after each turn + inform the user who won if there is a win
-    
 
+  function playerTurn() {
+    computerBoard.addEventListener('mouseover', enemyBoardHover);
+    computerBoard.addEventListener('mouseout', clearEnemyHover);
+
+  }
+  function computerTurn() {
+    computerBoard.removeEventListener('mouseover', enemyBoardHover);
+    computerBoard.removeEventListener('mouseout', clearEnemyHover);
+
+  }
+
+function enemyBoardHover(event) {
+    const row = parseInt(event.target.dataset.row);
+    const col = parseInt(event.target.dataset.col);
+
+    let cell = document.querySelector(`#computer .cell[data-row="${row}"][data-col="${col}"]`);
+    if (cell) cell.classList.add('highlight');
+}
+
+function clearEnemyHover(event) {
+    const row = parseInt(event.target.dataset.row);
+    const col = parseInt(event.target.dataset.col);
+
+    let cell = document.querySelector(`#computer .cell[data-row="${row}"][data-col="${col}"]`);
+    if (cell) cell.classList.remove('highlight');
+}

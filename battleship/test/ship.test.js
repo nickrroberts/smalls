@@ -1,9 +1,9 @@
 import Ship from "../src/ship.js";
 
-const testShip = Ship(4);
+const testShip = Ship("battleship");
 
 test("Creates a ship with a certain length", () => {
-    expect(testShip.length()).toBe(4);
+    expect(testShip.length).toBe(4);
 })
 
 test("Ship is sunk", () => {

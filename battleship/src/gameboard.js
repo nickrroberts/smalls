@@ -3,11 +3,11 @@ import Ship from "./ship.js";
 export default function Gameboard() {
     //10 x 10 board A-J, 1-10, letters in the DOM convert to numbers placement and strike coords
     const ships = {
-        carrier: Ship(5),
-        battleship: Ship(4),
-        cruiser: Ship(3),
-        submarine: Ship(3),
-        destroyer: Ship(2)
+        carrier: Ship("carrier"),
+        battleship: Ship("battleship"),
+        cruiser: Ship("cruiser"),
+        submarine: Ship("submarine"),
+        destroyer: Ship("destroyer")
     }
     const strikes = [];
 
@@ -42,25 +42,24 @@ export default function Gameboard() {
     return {
         placeShip(type, coordinates, orientation) {
             if (ships[type].isPlaced() === true) {
-                return "Invalid! Can only place one of each ship type."
+                throw new Error("Invalid! Can only place one of each ship type.");
             }
             
-            const coords = generateCoords(coordinates, ships[type].length(), orientation)
+            const coords = generateCoords(coordinates, ships[type].length, orientation)
                 
             for (let coord of coords) {
                 if (coord[0] > 10 || coord[1] > 10) {
-                    return "Invalid placement! Ship must be entirely on the game board."
+                    throw new Error("Invalid placement! Ship must be entirely on the game board.");
                 }
             }
 
             if (shipAtCoordinate(coords)) {
-                return "Invalid placement! Cannot place a ship on another ship."
+                throw new Error("Invalid placement! Cannot place a ship on another ship.");
             }
             else {
                 ships[type].place(coords);
+                return `${type} placed at ${coords}`
             }
-            
-
         },
 
         receiveAttack(coordinates) {
@@ -71,7 +70,7 @@ export default function Gameboard() {
             //or records the miss
             for (let strike of strikes) {
                 if (strike[0] === coordinates[0] && strike[1] === coordinates[1]) {
-                    return "Invalid move. You've already hit that spot."
+                    throw new Error("Invalid move. You've already hit that spot.");
                 }              
             }
 
@@ -90,6 +89,11 @@ export default function Gameboard() {
             }
             
             return "Miss!";
+        },
+
+        getShipDetails(ship) {
+            return ships[ship];
+
         },
 
         getBoardStatus() {         

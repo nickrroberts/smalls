@@ -18,7 +18,8 @@ export default function Player(type) {
         },
 
         place(type, coordinates, orientation) {
-            board.placeShip(type, coordinates, orientation);
+            const result = board.placeShip(type, coordinates, orientation);
+            return result;
         },
 
         checkWin(enemyPlayer) {

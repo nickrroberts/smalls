@@ -23,11 +23,17 @@ test("Can't shoot at a spot you've already shot", () => {
 
 //Hit should record on a validly placed ship
 test("Placed ship stores on the game board", () => {  
-    expect(board.receiveAttack([1,2])).toBe("Hit!");
-    expect(board.receiveAttack([6,2])).toBe("Hit!");
+    expect(board.receiveAttack([1,2])).toMatchObject({
+        status: "Hit",
+        sunk: false
+    });
+    expect(board.receiveAttack([6,2])).toMatchObject({
+        status: "Hit",
+        sunk: false
+    });
 
 })
 
 test("receiveAttack replies that nothing was hit when space is empty", () => {
-    expect(board.receiveAttack([4,3])).toBe("Miss!");
+    expect(board.receiveAttack([4,3])).toMatchObject({status: "Miss"});
 })

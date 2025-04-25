@@ -14,7 +14,7 @@ export default function Gameboard() {
     function generateCoords (startPoint, length, orientation) {
         const potentialCoords = [];
 
-        for (let i=0; i < (length + 1); i++) {
+        for (let i=0; i < length; i++) {
             if (orientation === "vert") potentialCoords.push([startPoint[0], startPoint[1] + i])
             if (orientation === "horiz") potentialCoords.push([startPoint[0] + i, startPoint[1]])
         } 
@@ -82,18 +82,29 @@ export default function Gameboard() {
                 ships[ship].hit();
 
                 if (ships[ship].isSunk()) {
-                    return `A hit! And....${ships[ship]} is sunk!`;
+                    return {
+                        status: "Hit",
+                        sunk: true,
+                        type: ships[ship].type
+                    }
                 } else {
-                    return "Hit!";
+                    return {
+                        status: "Hit",
+                        sunk: false
+                    }
                 }
             }
             
-            return "Miss!";
+            return { status: "Miss" };
         },
 
         getShipDetails(ship) {
             return ships[ship];
 
+        },
+
+        getShipCoords(ship) {
+            return ships[ship].getLocation();
         },
 
         getBoardStatus() {         

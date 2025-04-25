@@ -24,7 +24,7 @@ export default function Player(type) {
 
         checkWin(enemyPlayer) {
             const enemyBoard = enemyPlayer.getBoard().getBoardStatus();
-            if (enemyBoard.placed === enemyBoard.sunk) return `All of ${enemyPlayer.playerType}'s ships are sunk!`
+            if (enemyBoard.placed === enemyBoard.sunk) return true;
         }
     }
 }

@@ -9,7 +9,7 @@ export default function Ship(type) {
     let placed = false;
     let location = null;
     let length = null;
-    let image = null
+    let image = null;
     
     switch (type)  {
         case "carrier": 
@@ -40,6 +40,8 @@ export default function Ship(type) {
         image,
 
         length,
+
+        type,
 
         hit() {
             return hits += 1;

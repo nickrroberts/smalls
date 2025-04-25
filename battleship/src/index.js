@@ -53,12 +53,6 @@ function createCell(row, col) {
     return cell;
   }
   
-  for (let row = 1; row <= 10; row++) {
-    for (let col = 1; col <= 10; col++) {
-      humanBoard.appendChild(createCell(row, col));
-      computerBoard.appendChild(createCell(row, col));
-    }
-  }
 
 //Notifications setup
 
@@ -451,6 +445,14 @@ function takeShot(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // generate boards once DOM is ready
+  for (let row = 1; row <= 10; row++) {
+    for (let col = 1; col <= 10; col++) {
+      humanBoard.appendChild(createCell(row, col));
+      computerBoard.appendChild(createCell(row, col));
+    }
+  }
+
   renderShips(human, humanShipsSection);
   renderShips(computer, computerShipsSection);
   placeComputerShips();

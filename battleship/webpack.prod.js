@@ -5,6 +5,9 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export default merge(common, {
   mode: 'production',
+  output: {
+    publicPath: '/smalls/battleship/',
+  },
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],

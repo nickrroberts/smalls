@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+:root {
+    --divisor: 16;
+}
+
+html {
+    height: 100%;
+    
+}
+
+body {
+    font-family: "Cedarville Cursive", serif;
+    font-weight: 400;
+    font-style: normal;
+    height: 100%;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    background-color: #ffcc00;
+    padding: 20px;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+button {
+    background-color: #4000ff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: "Source Code Pro", serif;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff6933;
+}
+
+button:active, button:focus {
+    background-color: #4000ff;
+    outline: none;
+}
+
+.square {
+    aspect-ratio: 1 / 1;
+    width: calc(100% / var(--divisor));
+    height: calc(100% / var(--divisor));
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.square:hover {
+    background-color: #f0f0f0;
+}

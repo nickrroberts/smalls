@@ -3,11 +3,14 @@ Little projects for learning/fun. Here's an index with demo links:
 ### [3t](https://nickrroberts.github.io/smalls/3t/)
 Tic tac toe in the browser!
 
+### [battleship](https://nickrroberts.github.io/smalls/battleship/)
+Battleship in the browser!
+
 ### [calculator](https://nickrroberts.github.io/smalls/calculator/)
 A simple calculator written in vanilla js!
 
 ### [flexbox](https://nickrroberts.github.io/smalls/flexbox/)
-A basic landing page made using flexbox 👍.
+A basic landing page made using flexbox...👍
 
 ### [grid](https://nickrroberts.github.io/smalls/grid/)
 A reasonably responsive basic desktop dashboard view made with CSS Grid and Flexbox.

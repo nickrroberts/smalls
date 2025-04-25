@@ -2,8 +2,8 @@ import './style.css';
 import Player from "./player.js";
 import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
-import hit from "./assets/hit.svg"
-import miss from "./assets/miss.svg"
+import hit from "./assets/hit.svg";
+import miss from "./assets/miss.svg";
 
 let selectedShip = null;
 let selectedOrientation = 'horiz'; // or 'vert'
@@ -450,8 +450,9 @@ function takeShot(event) {
     shooter === human ? setGamePhase("computerTurn") : setGamePhase("playerTurn");
 }
 
-// Restore initial startup sequence
-renderShips(human, humanShipsSection);
-renderShips(computer, computerShipsSection);
-placeComputerShips();
-setGamePhase('placement');
+document.addEventListener('DOMContentLoaded', () => {
+  renderShips(human, humanShipsSection);
+  renderShips(computer, computerShipsSection);
+  placeComputerShips();
+  setGamePhase('placement');
+});

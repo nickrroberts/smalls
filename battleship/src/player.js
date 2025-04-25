@@ -23,8 +23,8 @@ export default function Player(type) {
         },
 
         checkWin(enemyPlayer) {
-            const enemyBoard = enemyPlayer.getBoard().getBoardStatus();
-            if (enemyBoard.placed === enemyBoard.sunk) return true;
+            const status = enemyPlayer.getBoard().getBoardStatus();
+            return status.placed > 0 && status.placed === status.sunk;
         }
     }
 }

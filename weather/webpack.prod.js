@@ -5,6 +5,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
   mode: 'production',
+  output: {
+    publicPath: '/smalls/weather/',
+  },
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],

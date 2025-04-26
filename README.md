@@ -4,7 +4,7 @@ Little projects for learning/fun. Here's an index with demo links:
 Tic tac toe in the browser!
 
 ### [battleship](https://nickrroberts.github.io/smalls/battleship/)
-Battleship in the browser!
+Battleship in the browser! It's a little unwieldy on mobile right now and I have a TODO to make it better. But desktop is pretty awesome. 
 
 ### [calculator](https://nickrroberts.github.io/smalls/calculator/)
 A simple calculator written in vanilla js!

@@ -9,6 +9,9 @@ Battleship in the browser! It's a little unwieldy on mobile right now and I have
 ### [calculator](https://nickrroberts.github.io/smalls/calculator/)
 A simple calculator written in vanilla js!
 
+### [cube](https://nickrroberts.github.io/smalls/cube/)
+Playing around with 3D transforms.
+
 ### [flexbox](https://nickrroberts.github.io/smalls/flexbox/)
 A basic landing page made using flexbox...👍
 

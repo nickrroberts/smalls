@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube</title>
+    <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background: #111;
+          margin: 0;
+          gap: 3rem;
+          perspective: 1000px;
+          flex-direction: column;
+        }
+
+        h1 {
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    
+        .box {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .face {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            pointer-events: none;
+        }
+
+        /* Front */
+        .front {
+            transform: translateZ(75px);
+            background: #FF5733; /* Orange-red */
+        }
+
+        /* Back */
+        .back {
+            transform: rotateY(180deg) translateZ(75px);
+            background: #33C1FF; /* Light blue */
+        }
+
+        /* Right */
+        .right {
+            transform: rotateY(90deg) translateZ(75px);
+            background: #75FF33; /* Light green */
+        }
+
+        /* Left */
+        .left {
+            transform: rotateY(-90deg) translateZ(75px);
+            background: #FF33A8; /* Pink */
+        }
+
+        /* Top */
+        .top {
+            transform: rotateX(90deg) translateZ(75px);
+            background: #FFF633; /* Yellow */
+        }
+
+        /* Bottom */
+        .bottom {
+            transform: rotateX(-90deg) translateZ(75px);
+            background: #8E33FF; /* Purple */
+        }
+      </style>
+</head>
+<body>
+    <div class="box">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+    </div>
+    <h1>Click and drag me</h1>
+    
+</body>
+<script>
+    const box = document.querySelector('.box');
+    let isDragging = false;
+    let previousX = 0;
+    let previousY = 0;
+    let rotateX = 0;
+    let rotateY = 0;
+
+    box.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        previousX = e.clientX;
+        previousY = e.clientY;
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+
+        const deltaX = e.clientX - previousX;
+        const deltaY = e.clientY - previousY;
+        rotateY += deltaX * 0.75;
+        rotateX -= deltaY * 0.5;
+
+        box.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+        previousX = e.clientX;
+        previousY = e.clientY;
+    });
+</script>
+</html>

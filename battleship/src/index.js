@@ -318,13 +318,18 @@ function computerTurn() {
 function takeShot(event) {
     if (gamePhase === "gameOver") return;
     let row, col;
+    let shooter;
+    let receiver;
     if (gamePhase === "playerTurn") {
+        shooter = human;
+        receiver = computer;
         const clickedCell = event.target.closest('.cell');
         if (!clickedCell) return; 
         row = parseInt(clickedCell.dataset.row);
         col = parseInt(clickedCell.dataset.col);
     } else {
-
+        shooter = computer; 
+        receiver = human;
         while (targetQueue.length > 0 && shotsFired.has(`${targetQueue[0][0]},${targetQueue[0][1]}`)) {
             targetQueue.shift();
         }
@@ -338,16 +343,6 @@ function takeShot(event) {
             } while (shotsFired.has(`${col},${row}`));
         }
     }
-    let shooter;
-    let receiver;
-
-     if (gamePhase === "playerTurn") {
-        shooter = human;
-        receiver = computer;
-     } else {
-        shooter = computer; 
-        receiver = human;
-     }
     
     let result;
 

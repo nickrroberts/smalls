@@ -18,6 +18,9 @@ A basic landing page made using flexbox...👍
 ### [grid](https://nickrroberts.github.io/smalls/grid/)
 A reasonably responsive basic desktop dashboard view made with CSS Grid and Flexbox.
 
+### [responsive](https://nickrroberts.github.io/smalls/responsive)
+Little responsive personal site template.
+
 ### [rps](https://nickrroberts.github.io/smalls/rps/)
 Rock Paper Scissors in the browser.
 
